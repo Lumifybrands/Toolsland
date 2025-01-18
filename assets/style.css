@@ -815,3 +815,50 @@ nav {
 .gallery-cont h2 {
     margin: 0;
 }
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 15px; /* Adds consistent spacing between images */
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 100%;
+  }
+  
+  .image-container a {
+    flex: 1 1 calc(33.333% - 30px); /* Sets three items per row with equal spacing */
+    max-width: calc(33.333% - 30px); /* Prevents items from exceeding this width */
+    text-decoration: none; /* Removes underline from links */
+    display: block; /* Ensures the link behaves like a block element */
+  }
+  
+  .image-container img {
+    width: 100%; /* Ensures the image fills its container's width */
+    height: 50vh; /* Keeps a consistent height */
+    object-fit: cover; /* Maintains the image's aspect ratio */
+    border-radius: 8px; /* Adds rounded corners to images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .image-container img:hover {
+    transform: scale(1.05); /* Adds a zoom effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .image-container a {
+      flex: 1 1 calc(50% - 20px); /* Adjusts to two items per row on tablets */
+      max-width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-container a {
+      flex: 1 1 calc(100% - 10px); /* Adjusts to one item per row on small screens */
+      max-width: calc(100% - 10px);
+    }
+  }
+  
